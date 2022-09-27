@@ -1,4 +1,4 @@
-test_array = [4,3,78,2,0,2]
+test_array = [123,3454,3432,432,23,2,34,1,45,34,43,3,78,2,0,2]
 
 def bubble_sort(array)
   total_elements = array.count
@@ -9,7 +9,6 @@ def bubble_sort(array)
       unless next_num == nil
         if num > next_num
           array[index],array[index + 1] = array[index + 1],array[index]
-          next_num = array[index + 1]
         end
         next_num = array[index + 1]
       end
