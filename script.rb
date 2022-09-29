@@ -1,4 +1,6 @@
-test_array = [123,3454,3432,432,23,2,34,1,45,34,43,3,78,2,0,2]
+# frozen_string_literal: true
+
+test_array = [123, 3454, 3432, 432, 23, 2, 34, 1, 45, 34, 43, 3, 78, 2, 0, 2]
 
 def bubble_sort(array)
   total_elements = array.count
@@ -6,12 +8,9 @@ def bubble_sort(array)
   while i <= total_elements
     array.each_with_index do |num, index|
       next_num = array[index + 1]
-      unless next_num == nil
-        if num > next_num
-          array[index],array[index + 1] = array[index + 1],array[index]
-        end
-        next_num = array[index + 1]
-      end
+      next if next_num.nil?
+
+      array[index], array[index + 1] = array[index + 1], array[index] if num > next_num
     end
     i += 1
   end
